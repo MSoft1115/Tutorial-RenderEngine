@@ -1,7 +1,7 @@
-Simple Render Engine(SoftRenderer & OpenGLRenderer)
+﻿Simple Render Engine(SoftRenderer & OpenGLRenderer)
 
 Author: Myway(SiZhong.Wang)
-QQȺ: 610456969
+QQ-Group: 610456969
 
 
 
