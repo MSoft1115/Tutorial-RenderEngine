@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{bf72c4d2-ed66-47ac-b714-dc56623aaa88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{3c344164-51f7-4eb3-ac54-093c96b436bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Math">
+      <UniqueIdentifier>{85fb8d0f-c976-4869-a41a-c664e36d7a99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Resource">
+      <UniqueIdentifier>{a8c3e4ed-f269-4d7b-9742-baaf3fba76c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Renderer">
+      <UniqueIdentifier>{a1849084-cb9a-411d-a197-627ffb6ae577}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Template">
+      <UniqueIdentifier>{17fb50fe-b60a-41b0-a912-88129b293fa1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenGLRenderer">
+      <UniqueIdentifier>{accf42ab-ead6-4d90-8ab5-f9eec015dc3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Rml">
+      <UniqueIdentifier>{c245a9e6-3173-46dd-a24b-fb3a09f62536}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Framework\App.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\WinMain.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Float2.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Float3.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Float4.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Mat4.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Quat.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\DataStream.cpp">
+      <Filter>Core\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\ResourceManager.cpp">
+      <Filter>Core\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Shader.cpp">
+      <Filter>Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Renderer.cpp">
+      <Filter>Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Buffer.cpp">
+      <Filter>Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGLRender03-Translation.cpp" />
+    <ClCompile Include="GLBuffer.cpp">
+      <Filter>OpenGLRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GLContext.cpp">
+      <Filter>OpenGLRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GLRenderer.cpp">
+      <Filter>OpenGLRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GLShader.cpp">
+      <Filter>OpenGLRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ThirdParty\rml\MRml.cpp">
+      <Filter>Core\Rml</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Framework\App.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\stdafx.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\XCore.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\XStdafx.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Float2.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Float3.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Float4.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Int2.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Int3.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Int4.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Mat4.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Quat.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\DataStream.h">
+      <Filter>Core\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\ResourceManager.h">
+      <Filter>Core\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Shader.h">
+      <Filter>Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\RenderOp.h">
+      <Filter>Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Renderer.h">
+      <Filter>Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Buffer.h">
+      <Filter>Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\SharedPtr.h">
+      <Filter>Core\Template</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Singleton.h">
+      <Filter>Core\Template</Filter>
+    </ClInclude>
+    <ClInclude Include="GLBuffer.h">
+      <Filter>OpenGLRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GLContext.h">
+      <Filter>OpenGLRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GLRenderer.h">
+      <Filter>OpenGLRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GLShader.h">
+      <Filter>OpenGLRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GLUtil.h">
+      <Filter>OpenGLRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\rml\MRml.h">
+      <Filter>Core\Rml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\rml\MRmlAllocator.h">
+      <Filter>Core\Rml</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

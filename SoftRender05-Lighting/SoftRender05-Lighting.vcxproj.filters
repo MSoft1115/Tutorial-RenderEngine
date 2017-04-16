@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="SoftRender05-lighting.cpp" />
+    <ClCompile Include="Framework\App.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\WinMain.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Float2.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Float3.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Float4.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Mat4.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Quat.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="SoftRenderer.cpp">
+      <Filter>SoftRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="SoftRendererContext.cpp">
+      <Filter>SoftRenderer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Framework\App.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\stdafx.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\XCore.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\XStdafx.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Float2.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Float3.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Float4.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Int2.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Int3.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Int4.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Mat4.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Quat.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\SharedPtr.h">
+      <Filter>Core\Template</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Singleton.h">
+      <Filter>Core\Template</Filter>
+    </ClInclude>
+    <ClInclude Include="SoftRenderer.h">
+      <Filter>SoftRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="SoftRendererContext.h">
+      <Filter>SoftRenderer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Core">
+      <UniqueIdentifier>{09061aa1-c09f-44a2-9a90-df716ad9cdde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{26d68111-6fd9-4be4-aade-941a5b0de44a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Math">
+      <UniqueIdentifier>{aff26ca0-ae0c-4a55-b75a-ec7c73a0d05c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Template">
+      <UniqueIdentifier>{040a7ea5-5908-47d9-8807-b8ebe4d6d257}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SoftRenderer">
+      <UniqueIdentifier>{7952ee5c-6755-46ec-9213-9a09803b03cf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

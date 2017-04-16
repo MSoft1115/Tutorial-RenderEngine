@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Framework\App.cpp">
+      <Filter>Framwork</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\WinMain.cpp">
+      <Filter>Framwork</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Float2.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Float3.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Float4.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Mat4.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Quat.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGLRender01-Context.cpp" />
+    <ClCompile Include="GLRenderer.cpp">
+      <Filter>GLRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GLContext.cpp">
+      <Filter>GLRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Renderer.cpp">
+      <Filter>Core\Renderer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Core\XCore.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\XStdafx.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\App.h">
+      <Filter>Framwork</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\stdafx.h">
+      <Filter>Framwork</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Float2.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Float3.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Float4.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Int2.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Int3.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Int4.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Mat4.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Quat.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\SharedPtr.h">
+      <Filter>Core\Template</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Singleton.h">
+      <Filter>Core\Template</Filter>
+    </ClInclude>
+    <ClInclude Include="GLUtil.h">
+      <Filter>GLRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GLRenderer.h">
+      <Filter>GLRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GLContext.h">
+      <Filter>GLRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Renderer.h">
+      <Filter>Core\Renderer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Core">
+      <UniqueIdentifier>{a4717dd4-5c6a-4098-9052-acb080739a51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framwork">
+      <UniqueIdentifier>{1e70cc5b-7df2-4203-aba6-f3e8aa314304}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Math">
+      <UniqueIdentifier>{6412214a-4f6e-4cc9-aa87-e1813cbbef56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Template">
+      <UniqueIdentifier>{57975a39-7010-457e-8627-1ef3f4b7949b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Renderer">
+      <UniqueIdentifier>{8a80667c-a3b6-4bb4-bf09-aa408400e62c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GLRenderer">
+      <UniqueIdentifier>{122ab02c-eefb-447b-8f25-73edfd44fb3f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Core">
+      <UniqueIdentifier>{c5ec7c47-e727-47e2-92af-b8e3072dbad7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{a5997acd-5ec8-4d57-9d2b-540ca3cb6e24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GLRenderer">
+      <UniqueIdentifier>{39eae57c-c406-4c73-be7b-89b8a943b633}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Math">
+      <UniqueIdentifier>{34ac0b1c-2a7a-4b5a-adf3-0f824e656db3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Renderer">
+      <UniqueIdentifier>{445c2b47-ccc5-468e-b70f-fcdcb40ffed1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Image">
+      <UniqueIdentifier>{15b46d55-26dc-48eb-ae23-7d724046ce18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Resource">
+      <UniqueIdentifier>{213435df-2496-4ee6-8ebb-9166658b3253}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Template">
+      <UniqueIdentifier>{ed6860b1-f484-4238-a322-541b31cba7fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Rml">
+      <UniqueIdentifier>{1828384d-4c03-4d9a-aa53-8fb30bf9fe61}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Core\Float2.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Float3.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Float4.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Mat4.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Quat.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Image.cpp">
+      <Filter>Core\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\ImageBMP.cpp">
+      <Filter>Core\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\ImagePNG.cpp">
+      <Filter>Core\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Buffer.cpp">
+      <Filter>Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Renderer.cpp">
+      <Filter>Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Shader.cpp">
+      <Filter>Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Texture.cpp">
+      <Filter>Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\DataStream.cpp">
+      <Filter>Core\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\ResourceManager.cpp">
+      <Filter>Core\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ThirdParty\rml\MRml.cpp">
+      <Filter>Core\Rml</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\App.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\WinMain.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="GLBuffer.cpp">
+      <Filter>GLRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GLContext.cpp">
+      <Filter>GLRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GLRenderer.cpp">
+      <Filter>GLRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GLShader.cpp">
+      <Filter>GLRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GLTexture.cpp">
+      <Filter>GLRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGLRender06-Shader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Core\XCore.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\XStdafx.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Float3.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Float2.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Float4.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Int2.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Int3.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Int4.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Mat4.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Quat.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Image.h">
+      <Filter>Core\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\ImageBMP.h">
+      <Filter>Core\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\ImagePNG.h">
+      <Filter>Core\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Buffer.h">
+      <Filter>Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Renderer.h">
+      <Filter>Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\RenderOp.h">
+      <Filter>Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Shader.h">
+      <Filter>Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Texture.h">
+      <Filter>Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\DataStream.h">
+      <Filter>Core\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\ResourceManager.h">
+      <Filter>Core\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Singleton.h">
+      <Filter>Core\Template</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\SharedPtr.h">
+      <Filter>Core\Template</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\rml\MRml.h">
+      <Filter>Core\Rml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\rml\MRmlAllocator.h">
+      <Filter>Core\Rml</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\App.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\stdafx.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="GLBuffer.h">
+      <Filter>GLRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GLContext.h">
+      <Filter>GLRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GLRenderer.h">
+      <Filter>GLRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GLShader.h">
+      <Filter>GLRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GLTexture.h">
+      <Filter>GLRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GLUtil.h">
+      <Filter>GLRenderer</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

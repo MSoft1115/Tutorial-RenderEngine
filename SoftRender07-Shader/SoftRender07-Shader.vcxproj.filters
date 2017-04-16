@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{4ba8494c-d8d5-41f6-9dd1-ae0cc6bb6a09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{13c0f3a0-2ed4-46bb-8981-1153dd6b5713}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Image">
+      <UniqueIdentifier>{023e0627-2e29-4015-aef7-93e1ffdee17b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Resource">
+      <UniqueIdentifier>{f7bd9dd5-1006-4ce3-8c95-a06ad08578fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Math">
+      <UniqueIdentifier>{5cef3fee-c1e1-49db-be2b-1a3cbc9c7525}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Template">
+      <UniqueIdentifier>{cf579184-9842-480b-9f48-4ad7eb02eb35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SoftRenderer">
+      <UniqueIdentifier>{7b501d01-dc7c-44e5-87c1-4625edc0adeb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Framework\App.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\WinMain.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="SoftRender07-Shader.cpp" />
+    <ClCompile Include="Core\ImageBMP.cpp">
+      <Filter>Core\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\ImagePNG.cpp">
+      <Filter>Core\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Image.cpp">
+      <Filter>Core\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\DataStream.cpp">
+      <Filter>Core\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\ResourceManager.cpp">
+      <Filter>Core\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Float2.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Float3.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Float4.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Mat4.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Quat.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="SoftRenderer.cpp">
+      <Filter>SoftRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="SoftRendererContext.cpp">
+      <Filter>SoftRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>SoftRenderer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Core\XCore.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\XStdafx.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\App.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\stdafx.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\ImageBMP.h">
+      <Filter>Core\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\ImagePNG.h">
+      <Filter>Core\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Image.h">
+      <Filter>Core\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\DataStream.h">
+      <Filter>Core\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\ResourceManager.h">
+      <Filter>Core\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Float2.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Float3.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Float4.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Int2.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Int3.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Int4.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Mat4.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Quat.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\SharedPtr.h">
+      <Filter>Core\Template</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Singleton.h">
+      <Filter>Core\Template</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>SoftRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="SoftRenderer.h">
+      <Filter>SoftRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>SoftRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="SoftRendererContext.h">
+      <Filter>SoftRenderer</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

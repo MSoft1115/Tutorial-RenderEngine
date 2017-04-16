@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SoftRender01-Framework", "SoftRender01-Framework\SoftRender01-Framework.vcxproj", "{18417A5D-5954-43B9-AAE5-2FDE16247A7B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SoftRender02-Context", "SoftRender02-Context\SoftRender02-Context.vcxproj", "{9F79A1BB-BA52-4291-A6D4-8D260AD55155}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SoftRender03-Primitive", "SoftRender03-Primitive\SoftRender03-Primitive.vcxproj", "{0EAF546F-1288-4A50-9BBA-E46C503294FC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SoftRender04-Translation", "SoftRender04-Translation\SoftRender04-Translation.vcxproj", "{D340A893-DE2B-4D68-9FD6-234B2AF27085}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SoftRender05-Lighting", "SoftRender05-Lighting\SoftRender05-Lighting.vcxproj", "{972338D0-FBA5-46BF-AC56-065F6FC0BFA8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SoftRender07-Shader", "SoftRender07-Shader\SoftRender07-Shader.vcxproj", "{40AA1451-30F4-42EE-AB79-2A6F0116BA28}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SoftRender06-Texture", "SoftRender06-Texture\SoftRender06-Texture.vcxproj", "{E5D429A0-4FE9-4CC5-8139-5EB65FF23353}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18417A5D-5954-43B9-AAE5-2FDE16247A7B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{18417A5D-5954-43B9-AAE5-2FDE16247A7B}.Debug|Win32.Build.0 = Debug|Win32
+		{18417A5D-5954-43B9-AAE5-2FDE16247A7B}.Release|Win32.ActiveCfg = Release|Win32
+		{18417A5D-5954-43B9-AAE5-2FDE16247A7B}.Release|Win32.Build.0 = Release|Win32
+		{9F79A1BB-BA52-4291-A6D4-8D260AD55155}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9F79A1BB-BA52-4291-A6D4-8D260AD55155}.Debug|Win32.Build.0 = Debug|Win32
+		{9F79A1BB-BA52-4291-A6D4-8D260AD55155}.Release|Win32.ActiveCfg = Release|Win32
+		{9F79A1BB-BA52-4291-A6D4-8D260AD55155}.Release|Win32.Build.0 = Release|Win32
+		{0EAF546F-1288-4A50-9BBA-E46C503294FC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0EAF546F-1288-4A50-9BBA-E46C503294FC}.Debug|Win32.Build.0 = Debug|Win32
+		{0EAF546F-1288-4A50-9BBA-E46C503294FC}.Release|Win32.ActiveCfg = Release|Win32
+		{0EAF546F-1288-4A50-9BBA-E46C503294FC}.Release|Win32.Build.0 = Release|Win32
+		{D340A893-DE2B-4D68-9FD6-234B2AF27085}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D340A893-DE2B-4D68-9FD6-234B2AF27085}.Debug|Win32.Build.0 = Debug|Win32
+		{D340A893-DE2B-4D68-9FD6-234B2AF27085}.Release|Win32.ActiveCfg = Release|Win32
+		{D340A893-DE2B-4D68-9FD6-234B2AF27085}.Release|Win32.Build.0 = Release|Win32
+		{972338D0-FBA5-46BF-AC56-065F6FC0BFA8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{972338D0-FBA5-46BF-AC56-065F6FC0BFA8}.Debug|Win32.Build.0 = Debug|Win32
+		{972338D0-FBA5-46BF-AC56-065F6FC0BFA8}.Release|Win32.ActiveCfg = Release|Win32
+		{972338D0-FBA5-46BF-AC56-065F6FC0BFA8}.Release|Win32.Build.0 = Release|Win32
+		{40AA1451-30F4-42EE-AB79-2A6F0116BA28}.Debug|Win32.ActiveCfg = Debug|Win32
+		{40AA1451-30F4-42EE-AB79-2A6F0116BA28}.Debug|Win32.Build.0 = Debug|Win32
+		{40AA1451-30F4-42EE-AB79-2A6F0116BA28}.Release|Win32.ActiveCfg = Release|Win32
+		{40AA1451-30F4-42EE-AB79-2A6F0116BA28}.Release|Win32.Build.0 = Release|Win32
+		{E5D429A0-4FE9-4CC5-8139-5EB65FF23353}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E5D429A0-4FE9-4CC5-8139-5EB65FF23353}.Debug|Win32.Build.0 = Debug|Win32
+		{E5D429A0-4FE9-4CC5-8139-5EB65FF23353}.Release|Win32.ActiveCfg = Release|Win32
+		{E5D429A0-4FE9-4CC5-8139-5EB65FF23353}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

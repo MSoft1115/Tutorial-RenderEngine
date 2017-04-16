@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="OpenGLRender05-Texture.cpp" />
+    <ClCompile Include="GLBuffer.cpp">
+      <Filter>GLRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GLContext.cpp">
+      <Filter>GLRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GLRenderer.cpp">
+      <Filter>GLRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GLShader.cpp">
+      <Filter>GLRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\App.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\WinMain.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Float2.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Float3.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Float4.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Mat4.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Quat.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Buffer.cpp">
+      <Filter>Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Shader.cpp">
+      <Filter>Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Renderer.cpp">
+      <Filter>Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\DataStream.cpp">
+      <Filter>Core\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\ResourceManager.cpp">
+      <Filter>Core\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ThirdParty\rml\MRml.cpp">
+      <Filter>Core\Rml</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Texture.cpp">
+      <Filter>Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Image.cpp">
+      <Filter>Core\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\ImageBMP.cpp">
+      <Filter>Core\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\ImagePNG.cpp">
+      <Filter>Core\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="GLTexture.cpp">
+      <Filter>GLRenderer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GLBuffer.h">
+      <Filter>GLRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GLContext.h">
+      <Filter>GLRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GLRenderer.h">
+      <Filter>GLRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GLShader.h">
+      <Filter>GLRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GLUtil.h">
+      <Filter>GLRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\XCore.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\XStdafx.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\App.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\stdafx.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Float2.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Float3.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Float4.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Int2.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Int3.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Int4.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Mat4.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Quat.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Buffer.h">
+      <Filter>Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Shader.h">
+      <Filter>Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Renderer.h">
+      <Filter>Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\RenderOp.h">
+      <Filter>Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Singleton.h">
+      <Filter>Core\Template</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\SharedPtr.h">
+      <Filter>Core\Template</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\DataStream.h">
+      <Filter>Core\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\ResourceManager.h">
+      <Filter>Core\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\rml\MRml.h">
+      <Filter>Core\Rml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ThirdParty\rml\MRmlAllocator.h">
+      <Filter>Core\Rml</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Texture.h">
+      <Filter>Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Image.h">
+      <Filter>Core\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\ImageBMP.h">
+      <Filter>Core\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\ImagePNG.h">
+      <Filter>Core\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="GLTexture.h">
+      <Filter>GLRenderer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Core">
+      <UniqueIdentifier>{93ba8f4e-5fb0-4ee1-9832-23bcda34da39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{528ab9b9-0328-4d6a-afec-b4209eea8e5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GLRenderer">
+      <UniqueIdentifier>{e0657631-5483-4be9-8f14-e98f7576c47d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Renderer">
+      <UniqueIdentifier>{3de03153-9f11-4bc8-98c5-a33ab679ee3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Math">
+      <UniqueIdentifier>{c25118df-4ceb-4030-af14-92b3f73646a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Template">
+      <UniqueIdentifier>{948e45d4-46d2-4f3a-af2a-807b6a51dd3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Resource">
+      <UniqueIdentifier>{da2f70b3-c6b3-432c-8d6d-c21801fde2b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Rml">
+      <UniqueIdentifier>{36c672f7-e1ec-4309-85a9-2b3ee75dafb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Image">
+      <UniqueIdentifier>{6d686687-2c33-4cb9-8f8d-b7e45a61759a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
