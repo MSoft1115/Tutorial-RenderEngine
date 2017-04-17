@@ -4,80 +4,76 @@
 
 using namespace X;
 
-struct SphereMesh
+void CreateSphere(RenderOp * rop, int rings, int segments, float radius)
 {
-	std::vector<Vertex> vertexBuffer;
-	std::vector<int> indexBuffer;
+	int vertexCount = (rings + 1) * (segments + 1);
+	int indexCount = rings * segments * 6;
 
-	void Create(int rings, int segments, float radius)
+	// vertex buffer
+	rop->vbuffer.resize(vertexCount);
+	Vertex * vert = &rop->vbuffer[0];
 	{
-		int vertexCount = (rings + 1) * (segments + 1);
-		int indexCount = rings * segments * 6;
+		float fTileRingAngle = (PI / rings);
+		float fTileSegAngle = (PI * 2 / segments);
+		float r;
+		short i, j;
+		Float3 pos, normal;
 
-		vertexBuffer.resize(vertexCount);
-		indexBuffer.resize(indexCount);
-
-		// vertex buffer
+		for (i = 0; i <= rings; ++i)
 		{
-			Vertex * vert = &vertexBuffer[0];
-			float fTileRingAngle = (PI / rings);
-			float fTileSegAngle = (PI * 2 / segments);
-			float r;
-			short i, j;
-			Float3 pos, normal;
+			r = radius * sin(i * fTileRingAngle);
+			pos.y = radius * cos(i * fTileRingAngle);
 
-			for (i = 0; i <= rings; ++i)
+			for (j = 0; j <= segments; ++j)
 			{
-				r = radius * sin(i * fTileRingAngle);
-				pos.y = radius * cos(i * fTileRingAngle);
+				pos.x = r * cos(j * fTileSegAngle);
+				pos.z = r * sin(j * fTileSegAngle);
+				normal = pos; normal.Normalize();
 
-				for (j = 0; j <= segments; ++j)
-				{
-					pos.x = r * cos(j * fTileSegAngle);
-					pos.z = r * sin(j * fTileSegAngle);
-					normal = pos; normal.Normalize();
-
-					vert->position = pos;
-					vert->normal = normal;
-					//vert->color = Float3(1, 1, 1);
-					vert->color = (normal + Float3(1, 1, 1)) / 2;
-					++vert;
-				}
-			}
-		}
-
-		// index buffer
-		{
-			int * indices = &indexBuffer[0];
-			short row = 0, row_n = 0;
-			short i, j;
-
-			for (i = 0; i < rings; ++i)
-			{
-				row_n = row + segments + 1;
-
-				for (j = 0; j < segments; ++j)
-				{
-					*indices++ = row + j;
-					*indices++ = row + j + 1;
-					*indices++ = row_n + j;
-
-					*indices++ = row_n + j;
-					*indices++ = row + j + 1;
-					*indices++ = row_n + j + 1;
-
-				}
-
-				row += segments + 1;
+				vert->position = pos;
+				vert->normal = normal;
+				//vert->color = Float3(1, 1, 1);
+				vert->color = (normal + Float3(1, 1, 1)) / 2;
+				++vert;
 			}
 		}
 	}
-};
+
+	// index buffer
+	rop->ibuffer.resize(indexCount);
+	short * indices = &rop->ibuffer[0];
+	{
+		short row = 0, row_n = 0;
+		short i, j;
+
+		for (i = 0; i < rings; ++i)
+		{
+			row_n = row + segments + 1;
+
+			for (j = 0; j < segments; ++j)
+			{
+				*indices++ = row + j;
+				*indices++ = row + j + 1;
+				*indices++ = row_n + j;
+
+				*indices++ = row_n + j;
+				*indices++ = row + j + 1;
+				*indices++ = row_n + j + 1;
+
+			}
+
+			row += segments + 1;
+		}
+	}
+
+	rop->primCount = indexCount / 3;
+	rop->primType = ePrimType::TRI_LIST;
+}
 
 class MyApp : public App
 {
 	SoftRenderer * mRenderer;
-	SphereMesh mMesh;
+	RenderOp * mRenderOp;
 	Mat4 mWorldMatrix;
 	Mat4 mViewMatrix;
 	Mat4 mProjMatrix;
@@ -97,7 +93,8 @@ public:
 		mRenderer = new SoftRenderer(mWnd, w, h);
 
 		// ´´½¨ÇòÌå
-		mMesh.Create(30, 30, 1);
+		mRenderOp = new RenderOp;
+		CreateSphere(mRenderOp, 30, 30, 1);
 	}
 
 	virtual void OnUpdate()
@@ -158,11 +155,7 @@ public:
 		mRenderer->SetRenderState(rstate);
 
 		// äÖÈ¾
-		mRenderer->Render(&mMesh.vertexBuffer[0],
-						  mMesh.vertexBuffer.size(),
-						  &mMesh.indexBuffer[0],
-						  mMesh.indexBuffer.size() / 3,
-						  ePrimType::TRI_LIST);
+		mRenderer->Render(mRenderOp);
 
 		mRenderer->End();
 
@@ -172,6 +165,7 @@ public:
 
 	virtual void OnShutdown()
 	{
+		delete mRenderOp;
 		delete mRenderer;
 	}
 

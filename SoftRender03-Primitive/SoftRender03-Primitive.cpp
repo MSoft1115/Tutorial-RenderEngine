@@ -7,9 +7,9 @@ class MyApp : public App
 {
 	SoftRenderer * mRenderer;
 	int mPrimType;
-	Vertex mQuad[4];
-	int mLineList[8];
-	int mTriList[8];
+	RenderOp * mRenderOp;
+	std::vector<short> mTriList;
+	std::vector<short> mLineList;
 
 public:
 	MyApp()
@@ -25,25 +25,34 @@ public:
 		mRenderer = new SoftRenderer(mWnd, w, h);
 
 		// 创建正方形
-		Vertex * vb = mQuad;
-		vb[0].position = Float3(-1, +1, 0) * 0.5f;
-		vb[1].position = Float3(+1, +1, 0) * 0.5f;
-		vb[2].position = Float3(-1, -1, 0) * 0.5f;
-		vb[3].position = Float3(+1, -1, 0) * 0.5f;
-		vb[0].color = Float4(1, 0, 0, 1);
-		vb[1].color = Float4(1, 0, 0, 1);
-		vb[2].color = Float4(0, 1, 0, 1);
-		vb[3].color = Float4(0, 1, 0, 1);
+		mRenderOp = new RenderOp;
+		mRenderOp->vbuffer.resize(4);
+		mRenderOp->primCount = 0;
+		mRenderOp->primType = ePrimType::TRI_LIST;
+
+		Vertex * vb = &mRenderOp->vbuffer[0];
+		{
+			vb[0].position = Float3(-1, +1, 0) * 0.5f;
+			vb[1].position = Float3(+1, +1, 0) * 0.5f;
+			vb[2].position = Float3(-1, -1, 0) * 0.5f;
+			vb[3].position = Float3(+1, -1, 0) * 0.5f;
+			vb[0].color = Float4(1, 0, 0, 1);
+			vb[1].color = Float4(1, 0, 0, 1);
+			vb[2].color = Float4(0, 1, 0, 1);
+			vb[3].color = Float4(0, 1, 0, 1);
+		}
 
 		// 三角形列表
-		int * ib = mTriList;
+		mTriList.resize(6);
+		short * ib = &mTriList[0];
 		{
 			*ib++ = 0, *ib++ = 1, *ib++ = 2;
 			*ib++ = 2, *ib++ = 1, *ib++ = 3;
 		}
 
 		//  线列表
-		ib = mLineList;
+		mLineList.resize(8);
+		ib = &mLineList[0];
 		{
 			*ib++ = 0, *ib++ = 1;
 			*ib++ = 1, *ib++ = 3;
@@ -68,16 +77,16 @@ public:
 		Mat4 form;
 		form.MakeRotation(Float3(0, 0, 1), PI * mTime * 0.3f);
 
-		Vertex * vb = mQuad;
+		Vertex * vb = &mRenderOp->vbuffer[0];
 		vb[0].position = Float3(-1, +1, 0) * 0.5f;
 		vb[1].position = Float3(+1, +1, 0) * 0.5f;
 		vb[2].position = Float3(-1, -1, 0) * 0.5f;
 		vb[3].position = Float3(+1, -1, 0) * 0.5f;
 
-		mQuad[0].position.TransformA(form);
-		mQuad[1].position.TransformA(form);
-		mQuad[2].position.TransformA(form);
-		mQuad[3].position.TransformA(form);
+		vb[0].position.TransformA(form);
+		vb[1].position.TransformA(form);
+		vb[2].position.TransformA(form);
+		vb[3].position.TransformA(form);
 
 		// 保持纵横比
 		float aspect = (float)mHeight / mWidth;
@@ -90,15 +99,24 @@ public:
 		switch (mPrimType)
 		{
 			case ePrimType::TRI_LIST:
-				mRenderer->Render(vb, 4, mTriList, 2, ePrimType::TRI_LIST);
+				mRenderOp->ibuffer = mTriList;
+				mRenderOp->primCount = 2;
+				mRenderOp->primType = ePrimType::TRI_LIST;
+				mRenderer->Render(mRenderOp);
 				break;
 
 			case ePrimType::LINE_LIST:
-				mRenderer->Render(vb, 4, mLineList, 4, ePrimType::LINE_LIST);
+				mRenderOp->ibuffer = mLineList;
+				mRenderOp->primCount = 4;
+				mRenderOp->primType = ePrimType::LINE_LIST;
+				mRenderer->Render(mRenderOp);
 				break;
 
 			case ePrimType::POINT_LIST:
-				mRenderer->Render(vb, 4, NULL, 4, ePrimType::POINT_LIST);
+				mRenderOp->ibuffer.clear();
+				mRenderOp->primCount = 4;
+				mRenderOp->primType = ePrimType::POINT_LIST;
+				mRenderer->Render(mRenderOp);
 				break;
 		}
 
@@ -110,6 +128,7 @@ public:
 
 	virtual void OnShutdown()
 	{
+		delete mRenderOp;
 		delete mRenderer;
 	}
 

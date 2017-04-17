@@ -5,90 +5,93 @@
 
 using namespace X;
 
-struct QuadMesh
+void CreateQuad(RenderOp * rop, float width, float height)
 {
 	static const int LINE_ELEMS = 16;
 	static const int LINE_VERTS = LINE_ELEMS + 1;
 
-	std::array<Vertex, LINE_VERTS * LINE_VERTS> vertexBuffer;
-	std::array<int, LINE_ELEMS * LINE_ELEMS * 6> indexBuffer;
-
-	void Create(float width, float height)
+	rop->vbuffer.resize(LINE_VERTS * LINE_VERTS);
+	Vertex * vb = &rop->vbuffer[0];
+	for (int j = 0; j <= LINE_ELEMS; ++j)
 	{
-		Vertex * vb = &vertexBuffer[0];
-		for (int j = 0; j <= LINE_ELEMS; ++j)
+		for (int i = 0; i <= LINE_ELEMS; ++i)
 		{
-			for (int i = 0; i <= LINE_ELEMS; ++i)
-			{
-				vb->position.x = (i / (float)LINE_ELEMS - 0.5f) * width;
-				vb->position.y = (0.5f - j / (float)LINE_ELEMS) * height;
-				vb->position.z = 0;
-				vb->color = Float4(1, 1, 1);
-				vb->uv.x = i / (float)LINE_ELEMS;
-				vb->uv.y = j / (float)LINE_ELEMS;
+			vb->position.x = (i / (float)LINE_ELEMS - 0.5f) * width;
+			vb->position.y = (0.5f - j / (float)LINE_ELEMS) * height;
+			vb->position.z = 0;
+			vb->color = Float4(1, 1, 1);
+			vb->uv.x = i / (float)LINE_ELEMS;
+			vb->uv.y = j / (float)LINE_ELEMS;
 
-				++vb;
-			}
+			++vb;
+		}
+	}
+
+	rop->ibuffer.resize(LINE_ELEMS * LINE_ELEMS * 6);
+	short * ib = &rop->ibuffer[0];
+	for (int j = 0; j < LINE_ELEMS; ++j)
+	{
+		for (int i = 0; i < LINE_ELEMS; ++i)
+		{
+			*ib++ = (j + 0) * LINE_VERTS + (i + 0);
+			*ib++ = (j + 0) * LINE_VERTS + (i + 1);
+			*ib++ = (j + 1) * LINE_VERTS + (i + 0);
+
+			*ib++ = (j + 1) * LINE_VERTS + (i + 0);
+			*ib++ = (j + 0) * LINE_VERTS + (i + 1);
+			*ib++ = (j + 1) * LINE_VERTS + (i + 1);
+		}
+	}
+
+	rop->primCount = LINE_ELEMS * LINE_ELEMS * 2;
+	rop->primType = ePrimType::TRI_LIST;
+}
+
+struct MyShader : public Shader
+{
+	float mTime;
+
+	virtual void VertexShader(RasterizerVertex * vo, const Vertex * vi)
+	{
+		vo->position = Float4(vi->position);
+		vo->normal = vi->normal;
+		vo->color = vi->color;
+		vo->uv = vi->uv;
+
+		// 波动
+		vo->position.y += vo->position.y * sin(vo->position.x * PI + mTime * PI) * 0.15f;
+
+		// 世界变换
+		vo->position.TransformA(SoftRenderer::Instance()->GetWorldMatrix());
+
+		// 视图变换
+		vo->position.TransformA(SoftRenderer::Instance()->GetViewMatrix());
+
+		// 投影变换
+		vo->position.Transform(SoftRenderer::Instance()->GetProjMatrix());
+	}
+
+	bool PixelShader(RasterizerVertex * vio)
+	{
+		Texture * tex = SoftRenderer::Instance()->GetTexture();
+		const SamplerState & sstate = SoftRenderer::Instance()->GetSamplerState();
+
+		if (tex != NULL)
+		{
+			vio->color = vio->color * tex->Tex2D(vio->uv.x, vio->uv.y, sstate);
 		}
 
-		int * ib = &indexBuffer[0];
-		for (int j = 0; j < LINE_ELEMS; ++j)
-		{
-			for (int i = 0; i < LINE_ELEMS; ++i)
-			{
-				*ib++ = (j + 0) * LINE_VERTS + (i + 0);
-				*ib++ = (j + 0) * LINE_VERTS + (i + 1);
-				*ib++ = (j + 1) * LINE_VERTS + (i + 0);
-
-				*ib++ = (j + 1) * LINE_VERTS + (i + 0);
-				*ib++ = (j + 0) * LINE_VERTS + (i + 1);
-				*ib++ = (j + 1) * LINE_VERTS + (i + 1);
-			}
-		}
+		return true;
 	}
 };
-
-float gTime = 0;
-
-void VertexShader(RasterizerVertex * vo, const Vertex * vi, SoftRenderer * renderer)
-{
-	vo->position = Float4(vi->position);
-	vo->normal = vi->normal;
-	vo->color = vi->color;
-	vo->uv = vi->uv;
-
-	// 波动
-	vo->position.y += vo->position.y * sin(vo->position.x * PI + gTime * PI) * 0.15f;
-
-	// 世界变换
-	vo->position.TransformA(renderer->GetWorldMatrix());
-
-	// 视图变换
-	vo->position.TransformA(renderer->GetViewMatrix());
-
-	// 投影变换
-	vo->position.Transform(renderer->GetProjMatrix());
-}
-
-bool PixelShader(RasterizerVertex * vio, SoftRenderer * renderer)
-{
-	Texture * tex = renderer->GetTexture();
-	const SamplerState & sstate = renderer->GetSamplerState();
-
-	if (tex != NULL)
-	{
-		vio->color = vio->color * tex->Tex2D(vio->uv.x, vio->uv.y, sstate);
-	}
-
-	return true;
-}
 
 class MyApp : public App
 {
 	ResourceManager * mResourceManager;
 	SoftRenderer * mRenderer;
-	QuadMesh mMesh;
+	RenderOp * mRenderOp;
 	Texture mTexture;
+	MyShader mShader;
 	Mat4 mWorldMatrix;
 	Mat4 mViewMatrix;
 	Mat4 mProjMatrix;
@@ -109,8 +112,9 @@ public:
 
 		mResourceManager->AddFloder("../Media");
 
-		// 创建球体
-		mMesh.Create(1, 1);
+		// 创建正方形
+		mRenderOp = new RenderOp;
+		CreateQuad(mRenderOp, 1, 1);
 
 		// 加载纹理
 		mTexture.Load("X.png");
@@ -174,29 +178,22 @@ public:
 		mRenderer->SetRenderState(rstate);
 
 		// 设置Shader
-		Shader shader;
-		shader.pfn_vs = VertexShader;
-		shader.pfn_ps = PixelShader;
-		mRenderer->SetShader(&shader);
+		mShader.mTime = mTime;
+		mRenderer->SetShader(&mShader);
 
 		// 渲染
-		mRenderer->Render(&mMesh.vertexBuffer[0],
-						  mMesh.vertexBuffer.size(),
-						  &mMesh.indexBuffer[0],
-						  mMesh.indexBuffer.size() / 3,
-						  ePrimType::TRI_LIST);
+		mRenderer->Render(mRenderOp);
+
 		//
 		mRenderer->End();
 
 		// 提交
 		mRenderer->Present();
-
-		//
-		gTime = mTime;
 	}
 
 	virtual void OnShutdown()
 	{
+		delete mRenderOp;
 		delete mRenderer;
 	}
 

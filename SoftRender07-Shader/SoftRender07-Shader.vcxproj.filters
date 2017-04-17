@@ -141,5 +141,8 @@
     <ClInclude Include="SoftRendererContext.h">
       <Filter>SoftRenderer</Filter>
     </ClInclude>
+    <ClInclude Include="RenderOp.h">
+      <Filter>SoftRenderer</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

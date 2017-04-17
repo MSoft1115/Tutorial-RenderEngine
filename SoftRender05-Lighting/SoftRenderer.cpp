@@ -92,27 +92,27 @@ namespace X {
 			mDepthBuffer[i] = depth;
 	}
 
-	void SoftRenderer::Render(const Vertex * varray, int vertexCount, const int * iarray, int primCount, int primType)
+	void SoftRenderer::Render(RenderOp * rop)
 	{
 		// 顶点处理
-		mRasterizerVertexBuffer.resize(vertexCount);
-		for (int i = 0; i < vertexCount; ++i)
+		mRasterizerVertexBuffer.resize(rop->vbuffer.size());
+		for (int i = 0; i < (int)rop->vbuffer.size(); ++i)
 		{
-			_vertex_shader(&mRasterizerVertexBuffer[i], &varray[i]);
+			_vertex_shader(&mRasterizerVertexBuffer[i], &rop->vbuffer[i]);
 		}
 
 		// 图元处理
 		RasterizerVertex A, B, C, D;
-		for (int i = 0; i < primCount; ++i)
+		for (int i = 0; i < rop->primCount; ++i)
 		{
-			if (primType == ePrimType::TRI_LIST)
+			if (rop->primType == ePrimType::TRI_LIST)
 			{
-				if (iarray != NULL)
+				if (rop->ibuffer.size() > 0)
 				{
 					// 使用索引列表
-					A = mRasterizerVertexBuffer[iarray[i * 3 + 0]];
-					B = mRasterizerVertexBuffer[iarray[i * 3 + 1]];
-					C = mRasterizerVertexBuffer[iarray[i * 3 + 2]];
+					A = mRasterizerVertexBuffer[rop->ibuffer[i * 3 + 0]];
+					B = mRasterizerVertexBuffer[rop->ibuffer[i * 3 + 1]];
+					C = mRasterizerVertexBuffer[rop->ibuffer[i * 3 + 2]];
 				}
 				else
 				{
@@ -146,13 +146,13 @@ namespace X {
 				// 光栅化
 				_rasterizeTri(&A, &B, &C);
 			}
-			else if (primType == ePrimType::LINE_LIST)
+			else if (rop->primType == ePrimType::LINE_LIST)
 			{
-				if (iarray != NULL)
+				if (rop->ibuffer.size() > 0)
 				{
 					// 使用索引列表
-					A = mRasterizerVertexBuffer[iarray[i * 2 + 0]];
-					B = mRasterizerVertexBuffer[iarray[i * 2 + 1]];
+					A = mRasterizerVertexBuffer[rop->ibuffer[i * 2 + 0]];
+					B = mRasterizerVertexBuffer[rop->ibuffer[i * 2 + 1]];
 				}
 				else
 				{
@@ -160,9 +160,6 @@ namespace X {
 					A = mRasterizerVertexBuffer[i * 2 + 0];
 					B = mRasterizerVertexBuffer[i * 2 + 1];
 				}
-
-				// 背面裁剪
-
 
 				// 裁剪
 
@@ -180,22 +177,18 @@ namespace X {
 				// 光栅化
 				_rasterizeLine(&A, &B);
 			}
-			else if (primType == ePrimType::POINT_LIST)
+			else if (rop->primType == ePrimType::POINT_LIST)
 			{
-				if (iarray != NULL)
+				if (rop->ibuffer.size() > 0)
 				{
 					// 使用索引列表
-					A = mRasterizerVertexBuffer[iarray[i]];
+					A = mRasterizerVertexBuffer[rop->ibuffer[i]];
 				}
 				else
 				{
 					// 使用顶点列表
 					A = mRasterizerVertexBuffer[i];
 				}
-
-				// 背面裁剪
-
-				// 裁剪
 
 				// 视口变换
 				A.position.x /= A.position.w;

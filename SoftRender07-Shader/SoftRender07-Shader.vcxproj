@@ -112,6 +112,7 @@
     <ClInclude Include="Core\XStdafx.h" />
     <ClInclude Include="Framework\App.h" />
     <ClInclude Include="Framework\stdafx.h" />
+    <ClInclude Include="RenderOp.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="SoftRenderer.h" />
     <ClInclude Include="SoftRendererContext.h" />
